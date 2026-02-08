@@ -14,12 +14,15 @@ simulations, and iteratively fixing real bugs when things go wrong.
 ---
 
 ## What’s in this repo
+
+```text
 .
-├── chipchat_exampleA.ipynb # Part I: Combinational example (binary_to_bcd)
-├── chipchat_exampleB.ipynb # Part I: FSM example (sequence_detector)
-├── chipchat_extension.ipynb # Part III: Extended FSM via spec change
-├── ChipChat_Report.pdf # Final written report
-└── README.md # This file
+├── chipchat_exampleA.ipynb   # Part I: Combinational example (binary_to_bcd)
+├── chipchat_exampleB.ipynb   # Part I: FSM example (sequence_detector)
+├── chipchat_extension.ipynb  # Part III: Extended FSM via spec change
+├── ChipChat_Report.pdf       # Final written report
+└── README.md                 # This file
+```
 
 
 Each notebook is self-contained and can be run independently.

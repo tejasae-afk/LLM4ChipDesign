@@ -116,7 +116,7 @@ No external files or manual edits are required beyond the API key.
 
 **Course Instructors:**  
 Prof. Dr. Ramesh Karri  
-Course Staff: Weihua Xiao
+Course Assistant: Weihua Xiao
 ---
 
 ## Author

@@ -1,19 +1,18 @@
-# LLM4ChipDesign
-ChipChat Tutorial Assignment
-# ChipChat Tutorial Assignment
+# LLM4ChipDesign  
+## ChipChat Tutorial Assignment
 
 This repository contains my complete submission for the **ChipChat Tutorial Assignment**
-in the course **LLM4ChipDesign**. The goal of this assignment was to explore how large
-language models (LLMs) can be used to assist with Verilog RTL generation, and to
-understand their limitations through verification and debugging.
+in the course **LLM4ChipDesign**. The purpose of this assignment is to explore how
+large language models (LLMs) can assist with Verilog RTL generation, and to understand
+their limitations through simulation, verification, and debugging.
 
-Rather than treating the LLM as a black box that always produces correct code, this
-assignment focuses on prompt engineering, cleaning up generated RTL, running
-simulations, and iteratively fixing real bugs when things go wrong.
+Rather than assuming that LLM-generated RTL is always correct, this assignment
+emphasizes prompt engineering, manual cleanup of generated code, verification using
+testbenches, and iterative debugging based on simulation results.
 
 ---
 
-## What’s in this repo
+## Repository Structure
 
 ```text
 .
@@ -24,112 +23,126 @@ simulations, and iteratively fixing real bugs when things go wrong.
 └── README.md                 # This file
 ```
 
+Each notebook is self-contained and can be executed independently.
 
-Each notebook is self-contained and can be run independently.
+Assignment Overview
+Part I — Tutorial Examples
 
----
+Two official ChipChat tutorial examples were completed:
 
-## Assignment breakdown
+Example A (Combinational): binary_to_bcd
+A purely combinational module that converts a binary input into its BCD
+representation.
 
-### Part I — Tutorial examples
+Example B (Sequential / FSM): sequence_detector
+A finite state machine that detects a specified input sequence and asserts an
+output signal when the sequence is observed.
 
-I completed two official ChipChat tutorial examples:
+For each example, the corresponding notebook includes:
 
-- **Example A (Combinational):** `binary_to_bcd`  
-  A purely combinational module that converts an 8-bit binary input into BCD digits.
+The final prompt used for RTL generation
 
-- **Example B (Sequential/FSM):** `sequence_detector`  
-  A finite state machine that detects a specific bit sequence with overlapping support.
+The raw LLM-generated output
 
-For both examples, the notebooks include:
-- The final prompt used for generation
-- The raw LLM output
-- Cleaned, synthesizable Verilog
-- A self-checking testbench
-- Compilation and simulation using `iverilog` and `vvp`
-- Programmatic generation of `.v` files for reproducibility
+Cleaned and synthesizable Verilog code
 
----
+The provided (unchanged) testbench
 
-### Part II — Debugging loop
+Compilation and simulation using iverilog and vvp
 
-Part II documents a real bug encountered in the FSM example. Although the design
-compiled successfully, it initially failed simulation because the detection output
-was asserted combinationally and missed by the testbench.
+Programmatic generation of .v files for reproducibility
 
-The debugging process includes:
-- Multiple iterations
-- Clear failure symptoms
-- Root-cause analysis
-- A design fix (registering the output)
-- A final passing simulation
+Part II — Debugging and Iteration
 
-This section shows how verification and debugging are still essential when working
-with LLM-generated RTL.
+Part II documents an iterative debugging process based on the FSM example from
+Part I. Although the design initially compiled successfully, it failed simulation
+due to subtle issues related to reset behavior and Verilog scheduling semantics.
 
----
+This section demonstrates:
 
-### Part III — Prompt-engineering extension
+Multiple debugging iterations
 
-For the extension, I modified the FSM example by:
-- Changing the detected input sequence
-- Adding an `enable` signal to gate state updates
-- Exposing the FSM state through a `state_out` output
+Identification of simulation failures
 
-The prompt was updated to reflect these changes, and the testbench was modified
-accordingly to verify the new behavior.
+Root-cause analysis
 
----
+Incremental fixes applied only to the DUT
 
-## Tools and environment
+A final passing simulation using the original testbench
 
-- **Environment:** Google Colab
-- **LLM Access:** OpenAI Chat Completions API  
-  (the backend model was not explicitly fixed in the notebooks)
-- **Simulation:** Icarus Verilog (`iverilog -g2012`, `vvp`)
+This part highlights the importance of verification and debugging when working with
+LLM-generated hardware descriptions.
 
-All dependencies are installed inside the notebooks. The only manual step required
-to rerun them is inserting an API key in the designated cell.
+Part III — Prompt-Engineering Extension
 
----
+For the extension, the tutorial design was modified to introduce additional
+functionality beyond the original specification. The extension demonstrates how
+prompt engineering can be used to guide an LLM toward generating modified RTL, and
+how verification must be adapted accordingly.
 
-## Reproducibility
+This part includes:
 
-Each notebook is designed to run top-to-bottom on a fresh Colab runtime. Running a
-notebook will:
-1. Install required tools
-2. Generate the RTL and testbench files
-3. Compile the design with `iverilog`
-4. Run the simulation with `vvp`
-5. Print a clear PASS/FAIL message
+A clearly defined extension to the original design specification
 
-No external files or manual edits are required beyond the API key.
+Updated RTL reflecting the new behavior
 
----
+A self-checking testbench written to verify the extension
 
-## What I learned
+Successful simulation results demonstrating correctness
 
-- LLMs can speed up early RTL development, but they are not always correct
-- Prompt specificity makes a big difference in synthesizable HDL quality
-- Simulation is the ultimate source of truth for correctness
-- Debugging LLM-generated code is still very much a human-driven process
-- Treating the LLM as a helper rather than an authority leads to better results
+Tools and Environment
 
----
+Environment: Google Colab
 
-**Course Instructors:**  
-Prof. Dr. Ramesh Karri  
+LLM Access: OpenAI API (via the Chat Completions interface)
+
+Simulation: Icarus Verilog (iverilog -g2012, vvp)
+
+All dependencies are installed within the notebooks. The only required manual step
+to rerun the notebooks is inserting an OpenAI API key in the designated cell.
+
+Reproducibility
+
+Each notebook is designed to run from top to bottom on a fresh Colab runtime.
+Running a notebook will:
+
+Install required dependencies
+
+Generate Verilog RTL files
+
+Compile the design using iverilog
+
+Run the simulation using vvp
+
+Display clear pass/fail results
+
+No external files or manual edits are required beyond providing an API key.
+
+Lessons Learned
+
+LLMs can significantly speed up early RTL development, but they are not guaranteed
+to produce correct or synthesizable designs
+
+Prompt clarity and specificity strongly influence generated HDL quality
+
+Simulation is essential for validating correctness
+
+Debugging LLM-generated RTL remains a human-driven process
+
+Treating the LLM as an assistant rather than an authority leads to better outcomes
+
+Course Information
+
+Course: LLM4ChipDesign
+Instructor: Prof. Dr. Ramesh Karri
 Course Assistant: Weihua Xiao
----
 
-## Author
+Author
 
-**Tejas Attarde**  
-M.S. Electrical & Computer Engineering  
+Tejas Attarde
+M.S. Electrical & Computer Engineering
 NYU Tandon School of Engineering
 
----
+Notes
 
-## Notes
-
-This repository is provided as part of a course submission.
+This repository is submitted as part of a course assignment.

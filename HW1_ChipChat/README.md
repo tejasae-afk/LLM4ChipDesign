@@ -49,7 +49,7 @@ For both examples, the notebooks include:
 
 ---
 
-### 🔹 Part II — Debugging Loop
+### Part II — Debugging Loop
 
 Part II documents a real debugging process encountered in the FSM example.
 Although the initial design compiled successfully, it failed simulation due to
@@ -67,7 +67,7 @@ when working with LLM-generated RTL.
 
 ---
 
-### 🔹 Part III — Prompt-Engineering Extension
+### Part III — Prompt-Engineering Extension
 
 For the extension, the FSM tutorial example was modified by:
 - Changing the detected input sequence
@@ -79,7 +79,7 @@ was updated accordingly to verify the new behavior.
 
 ---
 
-## 🛠 Tools and Environment
+## Tools and Environment
 
 - **Environment:** Google Colab  
 - **LLM Access:** OpenAI Chat Completions API  
@@ -91,7 +91,7 @@ required to rerun them is inserting an API key in the designated cell.
 
 ---
 
-## 🔁 Reproducibility
+## Reproducibility
 
 Each notebook is designed to run top-to-bottom on a fresh Colab runtime.
 Running a notebook will:
@@ -106,7 +106,7 @@ No external files or manual edits are required beyond providing an API key.
 
 ---
 
-## 📚 What I Learned
+## What I Learned
 
 - LLMs can accelerate early RTL development but are not guaranteed to be correct
 - Prompt specificity has a significant impact on synthesizable HDL quality
@@ -116,7 +116,7 @@ No external files or manual edits are required beyond providing an API key.
 
 ---
 
-## 🎓 Course Information
+## Course Information
 
 **Course Instructors:**  
 - Prof. Dr. Ramesh Karri  
@@ -124,7 +124,7 @@ No external files or manual edits are required beyond providing an API key.
 
 ---
 
-## 👤 Author
+## Author
 
 **Tejas Attarde**  
 M.S. Electrical & Computer Engineering  

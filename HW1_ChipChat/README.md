@@ -25,124 +25,113 @@ testbenches, and iterative debugging based on simulation results.
 
 Each notebook is self-contained and can be executed independently.
 
-Assignment Overview
-Part I — Tutorial Examples
+## 📑 Assignment Breakdown
+
+### 🔹 Part I — Tutorial Examples
 
 Two official ChipChat tutorial examples were completed:
 
-Example A (Combinational): binary_to_bcd
-A purely combinational module that converts a binary input into its BCD
-representation.
+- **Example A (Combinational): `binary_to_bcd`**  
+  A purely combinational Verilog module that converts a binary input into its
+  corresponding BCD representation.
 
-Example B (Sequential / FSM): sequence_detector
-A finite state machine that detects a specified input sequence and asserts an
-output signal when the sequence is observed.
+- **Example B (Sequential / FSM): `sequence_detector`**  
+  A finite state machine that detects a specified input sequence with support
+  for overlapping patterns.
 
-For each example, the corresponding notebook includes:
+For both examples, the notebooks include:
+- The final prompt used for RTL generation
+- The raw LLM-generated output
+- Cleaned, synthesizable Verilog code
+- A self-checking testbench
+- Compilation and simulation using `iverilog` and `vvp`
+- Programmatic generation of `.v` files for reproducibility
 
-The final prompt used for RTL generation
+---
 
-The raw LLM-generated output
+### 🔹 Part II — Debugging Loop
 
-Cleaned and synthesizable Verilog code
+Part II documents a real debugging process encountered in the FSM example.
+Although the initial design compiled successfully, it failed simulation due to
+subtle issues related to output timing and testbench expectations.
 
-The provided (unchanged) testbench
+The debugging process includes:
+- Multiple iterations
+- Clear failure symptoms observed during simulation
+- Root-cause analysis
+- Incremental design fixes
+- A final passing simulation
 
-Compilation and simulation using iverilog and vvp
+This section highlights the continued importance of verification and debugging
+when working with LLM-generated RTL.
 
-Programmatic generation of .v files for reproducibility
+---
 
-Part II — Debugging and Iteration
+### 🔹 Part III — Prompt-Engineering Extension
 
-Part II documents an iterative debugging process based on the FSM example from
-Part I. Although the design initially compiled successfully, it failed simulation
-due to subtle issues related to reset behavior and Verilog scheduling semantics.
+For the extension, the FSM tutorial example was modified by:
+- Changing the detected input sequence
+- Adding an `enable` signal to gate state updates
+- Exposing the internal FSM state through a `state_out` output
 
-This section demonstrates:
+The prompt was updated to reflect the modified specification, and the testbench
+was updated accordingly to verify the new behavior.
 
-Multiple debugging iterations
+---
 
-Identification of simulation failures
+## 🛠 Tools and Environment
 
-Root-cause analysis
+- **Environment:** Google Colab  
+- **LLM Access:** OpenAI Chat Completions API  
+  *(The backend model was not explicitly fixed in the notebooks)*  
+- **Simulation:** Icarus Verilog (`iverilog -g2012`, `vvp`)
 
-Incremental fixes applied only to the DUT
+All dependencies are installed directly within the notebooks. The only manual step
+required to rerun them is inserting an API key in the designated cell.
 
-A final passing simulation using the original testbench
+---
 
-This part highlights the importance of verification and debugging when working with
-LLM-generated hardware descriptions.
+## 🔁 Reproducibility
 
-Part III — Prompt-Engineering Extension
-
-For the extension, the tutorial design was modified to introduce additional
-functionality beyond the original specification. The extension demonstrates how
-prompt engineering can be used to guide an LLM toward generating modified RTL, and
-how verification must be adapted accordingly.
-
-This part includes:
-
-A clearly defined extension to the original design specification
-
-Updated RTL reflecting the new behavior
-
-A self-checking testbench written to verify the extension
-
-Successful simulation results demonstrating correctness
-
-Tools and Environment
-
-Environment: Google Colab
-
-LLM Access: OpenAI API (via the Chat Completions interface)
-
-Simulation: Icarus Verilog (iverilog -g2012, vvp)
-
-All dependencies are installed within the notebooks. The only required manual step
-to rerun the notebooks is inserting an OpenAI API key in the designated cell.
-
-Reproducibility
-
-Each notebook is designed to run from top to bottom on a fresh Colab runtime.
+Each notebook is designed to run top-to-bottom on a fresh Colab runtime.
 Running a notebook will:
 
-Install required dependencies
-
-Generate Verilog RTL files
-
-Compile the design using iverilog
-
-Run the simulation using vvp
-
-Display clear pass/fail results
+1. Install required tools
+2. Generate the RTL and testbench files
+3. Compile the design using `iverilog`
+4. Run the simulation using `vvp`
+5. Print a clear PASS/FAIL message
 
 No external files or manual edits are required beyond providing an API key.
 
-Lessons Learned
+---
 
-LLMs can significantly speed up early RTL development, but they are not guaranteed
-to produce correct or synthesizable designs
+## 📚 What I Learned
 
-Prompt clarity and specificity strongly influence generated HDL quality
+- LLMs can accelerate early RTL development but are not guaranteed to be correct
+- Prompt specificity has a significant impact on synthesizable HDL quality
+- Simulation remains the ultimate source of truth for correctness
+- Debugging LLM-generated RTL is still a human-driven process
+- Treating the LLM as an assistant rather than an authority leads to better outcomes
 
-Simulation is essential for validating correctness
+---
 
-Debugging LLM-generated RTL remains a human-driven process
+## 🎓 Course Information
 
-Treating the LLM as an assistant rather than an authority leads to better outcomes
+**Course Instructors:**  
+- Prof. Dr. Ramesh Karri  
+- Course Assistant: Weihua Xiao  
 
-Course Information
+---
 
-Course: LLM4ChipDesign
-Instructor: Prof. Dr. Ramesh Karri
-Course Assistant: Weihua Xiao
+## 👤 Author
 
-Author
+**Tejas Attarde**  
+M.S. Electrical & Computer Engineering  
+NYU Tandon School of Engineering  
 
-Tejas Attarde
-M.S. Electrical & Computer Engineering
-NYU Tandon School of Engineering
+---
 
-Notes
+## Notes
 
 This repository is submitted as part of a course assignment.

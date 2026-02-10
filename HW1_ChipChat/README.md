@@ -27,7 +27,7 @@ Each notebook is self-contained and can be executed independently.
 
 ## 📑 Assignment Breakdown
 
-### 🔹 Part I — Tutorial Examples
+### Part I — Tutorial Examples
 
 Two official ChipChat tutorial examples were completed:
 

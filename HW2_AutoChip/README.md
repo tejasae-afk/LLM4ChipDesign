@@ -36,14 +36,15 @@ This repository demonstrates how AI models can be integrated into hardware desig
 
 ##  Project Structure
 
-├── AutoChip_Example1.ipynb # Combinational logic (GPT-4o-mini)
-├── AutoChip_Example2.ipynb # Sequential FSM (GPT-4o)
-├── example1.v # Generated combinational RTL
-├── sequence_detector.v # Generated FSM RTL
-├── sequence_detector_manual.v # Manual FSM implementation
-├── testbenches/ # Verification testbenches
-├── AutoChip_Report.pdf # Formal technical report
-└── config.json # Model configuration parameters
+├── AutoChip_Example1.ipynb        # Combinational logic (GPT-4o-mini)
+├── AutoChip_Example2.ipynb        # Sequential FSM (GPT-4o)
+├── example1.v                     # Generated combinational RTL (created inside notebook)
+├── sequence_detector.v            # Generated FSM RTL (created inside notebook)
+├── sequence_detector_manual.v     # Manual FSM implementation (created inside notebook)
+├── testbenches/                   # Verification testbenches (generated inside notebooks)
+├── AutoChip_Report.pdf            # Formal technical report
+└── config.json                    # Model configuration parameters (generated inside notebook)
+
 
 
 

@@ -34,8 +34,9 @@ This repository demonstrates how AI models can be integrated into hardware desig
 
 ---
 
-##  Project Structure
+## Project Structure
 
+```text
 ├── AutoChip_Example1.ipynb        # Combinational logic (GPT-4o-mini)
 ├── AutoChip_Example2.ipynb        # Sequential FSM (GPT-4o)
 ├── example1.v                     # Generated combinational RTL (created inside notebook)

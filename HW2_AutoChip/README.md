@@ -45,8 +45,6 @@ This repository demonstrates how AI models can be integrated into hardware desig
 ├── testbenches/                   # Verification testbenches (generated inside notebooks)
 ├── AutoChip_Report.pdf            # Formal technical report
 └── config.json                    # Model configuration parameters (generated inside notebook)
-
-
 ```
 
 ---

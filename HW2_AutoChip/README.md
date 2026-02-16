@@ -47,7 +47,7 @@ This repository demonstrates how AI models can be integrated into hardware desig
 └── config.json                    # Model configuration parameters (generated inside notebook)
 
 
-
+```
 
 ---
 

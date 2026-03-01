@@ -1,7 +1,7 @@
 # ROME Demo Assignment — Hierarchical LLM-Assisted Verilog Generation
 
 **Course:** LLM4ChipDesign  
-**Instructors:** Ramesh Karri, Weihua Xiao  
+**Instructors:** Dr. Ramesh Karri, Weihua Xiao  
 **Author:** Tejas Attarde  
 
 ---

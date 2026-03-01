@@ -105,29 +105,6 @@ This hierarchy was verified by inspecting the compiled vvp binary, which confirm
 
 ---
 
-## Running the Simulations
-
-To compile and simulate any module, use the following commands:
-
-**Compilation:**
-```bash
-iverilog -o <module>/<module> <module>/<module>.v <module>tb.v
-```
-
-**Simulation:**
-```bash
-vvp <module>/<module>
-```
-
-**Example — adder8:**
-```bash
-iverilog -o adder8/adder8 adder8/adder8.v adder8tb.v
-vvp adder8/adder8
-# Expected output:
-# adder8 passed!
-# Simulation complete.
-```
-
 All seven modules produce a `passed!` confirmation on the second-to-last output line, followed by `Simulation complete.`, as required by the ROME framework's output parser.
 
 ---

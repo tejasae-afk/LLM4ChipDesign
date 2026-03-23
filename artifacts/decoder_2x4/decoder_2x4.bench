@@ -1,0 +1,24 @@
+INPUT(A)
+INPUT(B)
+OUTPUT(Y0)
+OUTPUT(Y1)
+OUTPUT(Y2)
+OUTPUT(Y3)
+
+n_not_A = NOT(A)
+n_not_B = NOT(B)
+
+CONST0 = AND(A, n_not_A)
+CONST1 = OR(A, n_not_A)
+
+p_Y0_0 = AND(n_not_A, n_not_B)
+Y0 = BUF(p_Y0_0)
+
+p_Y1_0 = AND(n_not_A, B)
+Y1 = BUF(p_Y1_0)
+
+p_Y2_0 = AND(A, n_not_B)
+Y2 = BUF(p_Y2_0)
+
+p_Y3_0 = AND(A, B)
+Y3 = BUF(p_Y3_0)

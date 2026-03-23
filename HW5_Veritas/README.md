@@ -1,7 +1,6 @@
 # Veritas Submission
 
-**Professor:** Prof. Dr. Ramesh Karri  
-**Instructor:** Weihua Xiao  
+**Instructors:** Prof. Dr. Ramesh Karri, Weihua Xiao  
 **Student:** Tejas Attarde
 
 ## Overview
@@ -54,3 +53,17 @@ veritas-hw/
         ├── adder_5-bit.csv
         ├── adder_5-bit_tab.csv
         └── adder_5-bit.v
+```
+## Technical Highlights
+
+This submission demonstrates:
+
+- generation of Boolean logic in **conjunctive normal form (CNF)**
+- transformation of CNF into **BENCH netlists**
+- simulation of BENCH files to produce **truth tables**
+- conversion of BENCH into **Verilog**
+- **oracle-based validation** for functional correctness
+- comparison across **multiple model configurations**
+- scale-up evaluation from a smaller to a larger adder design
+
+The work also includes a controlled comparison using a second model and a scale-up experiment that evaluates how complexity grows with design size.
